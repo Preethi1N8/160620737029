@@ -1,0 +1,17 @@
+pip install Flask
+from flask import Flask,request,jsonify
+app = Flask(_ _name_ _)
+numbers =[]
+@app.route('/add_number',methods=['POST])
+def add_number():
+    data = request.get_json()
+    if 'number' in data:
+        numbers.append(data['number'])
+        return jsonify({'message':'Number added syccessfully'}),201
+    else:
+        return jsonify({'error':'Invalid data'}),400
+@app.route('/get_numbers',methods=['GET'])
+def get_numbers():
+    return jsonify)({'numbers':numbers})
+if _ _name_ _=='_ _main_ _':
+    app.run(debug=True)
